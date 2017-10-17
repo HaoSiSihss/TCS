@@ -1,0 +1,19 @@
+form{
+	height:30px;
+	width:50px;
+	position:relative;
+	top: -63px;
+    left: 145px;
+    background:rgba(0,0,0,0);
+}
+form #scoreV{
+	border:none;
+	position:absolute;
+	left:0;
+	top:0;
+	width:50px;
+	height:30px;
+	background:rgba(0,0,0,0);
+	color:#FFF;
+	font: bold 25px/30px 'Comic Sans MS','微软雅黑';
+}

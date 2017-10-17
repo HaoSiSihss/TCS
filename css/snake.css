@@ -1,0 +1,264 @@
+*{padding:0;margin:0;}
+body,html{width:100%;height:100%;}
+body{position:relative;
+background:#e2e2e2;background:url('../img/123.jpg') no-repeat;
+background-size:cover}
+@font-face {
+font-family: 'NeonTech';
+src: url('../fonts/NeonTech.eot');
+src: url('../fonts/NeonTech.eot?#iefix') format('embedded-opentype'),
+url('../fonts/NeonTech.woff') format('woff'),
+url('../fonts/NeonTech.ttf') format('truetype'),
+url('../fonts/NeonTech.svg#NeonTech') format('svg');
+font-weight: bolder;
+font-style: normal;
+}
+/*整个游戏面板*/
+div.panel{
+	top:20px;left:-100px;
+	margin:auto;
+	width:720px;
+	height: 600px;
+	position: relative;
+	// background: url('../img/bg.png') no-repeat;
+	// background-size: 100%;
+	
+}
+/*背景音乐开关*/
+#bgm_onoff{
+	width: 35px;
+	height: 35px;
+	background: url('../img/bgm-on.png') no-repeat;
+	background-size: cover;
+	position: absolute;
+	top:0px;
+	right: -85px;
+	cursor: pointer;
+
+
+}
+/*开始按钮*/
+div#start{
+	width: 215px;
+    height: 64px;
+    background: url('../img/before.png') no-repeat;
+    text-align: center;
+    line-height: 60px;
+    position: absolute;
+    bottom: 40px;
+    right: -250px;
+    cursor: pointer;
+    font-family: 'NeonTech';
+    font-size:28px;
+    color:#fbfbf1;
+}
+/*计分*/
+div.scoreframe{
+	width: 203px;
+    height: 98px;
+    background:url("../img/score.png") no-repeat -28px -88px;
+    background-size:123%;
+    text-align: center;
+    line-height: 98px;
+    position: absolute;
+	bottom:135px;
+	right:-245px;
+}
+#score{
+	width:200px;
+	font-family: 'NeonTech';
+    font-size:28px;
+    color:#fbfbf1; 
+    transform: rotate(-8deg);
+    position: absolute;
+    top:-9px;
+    left:17px;
+}
+form{
+	height:30px;
+	width:50px;
+	position:relative;
+	top: -63px;
+    left: 145px;
+    background:rgba(0,0,0,0);
+}
+form #scoreV{
+	border:none;
+	position:absolute;
+	left:0;
+	top:0;
+	width:50px;
+	height:30px;
+	background:rgba(0,0,0,0);
+	color:#FFF;
+	font: bold 25px/30px 'Comic Sans MS','微软雅黑';
+}
+.bg{
+	width: 770px;
+    height: 612px;
+    position: absolute;
+    top: -5px;
+    left: -25px;
+    background: url(../img/bg.png) no-repeat;
+    background-size: 116%;
+    background-position: center;
+}
+/*蛇活动区域*/
+div#container{   
+	position: absolute;
+    bottom: 43px;
+    right: 50px;
+	margin:auto;
+	// border:1px solid black;
+	width:640px;height:500px;
+	font-size:0;/*去除基线*/
+}
+span{
+	width:20px;
+	height:20px;
+	// box-sizing:border-box;
+	// border:1px solid black;
+}
+/*蛇走的每一个格子*/
+span.map{
+	display:inline-block;
+	position:relative;
+}
+.grass{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	background:url('../img/grass.png') no-repeat center center;
+	background-size:90%;
+	position:absolute;
+	z-index:2;
+}
+span.snake{
+	border-radius:8px;
+	background:url('../img/body.png') no-repeat;
+	background-size:cover;
+	position:absolute;
+}
+span.food{
+	background:url('../img/food.png') no-repeat;
+	background-size: cover;
+	position:absolute;
+	animation:chicken 2s;
+}
+@keyframes chicken{
+	0%{transform:scale(0);}
+	50%{transform:scale(1.2);}
+	100%{transform:scale(1);}
+}
+#tip{
+	width: 250px;
+	height: 160px;
+	background-color:#000;
+	position:absolute;
+	top:200px;
+	left: 240px;
+	text-align:center;
+	display:none;
+	z-index:9999;
+	font-family: "NeonTech";
+	border-radius: 28px;
+}
+.gameover{
+	color:red;
+	font-size:34px;
+	font-weight:bold;
+	margin-top:40px;
+}
+#ps{
+	color:#FFF;
+	text-align:left;
+	height: 30px;
+	margin-left:20px;
+	text-align:center;
+}
+#continue{
+	color:#000;
+	width: 100px;
+	height: 30px;
+	background-color:#FFF;
+	border: none;
+	border-radius:5px;
+}
+.head{
+	background-image: url('../img/head.png');
+	background-size: 100%;
+	position: absolute;
+	transition:transform 0.8s;
+	border:none;
+}
+.eating{
+	transform:scale(1.5);
+	transform-origin: center;
+}
+ /*pause-s*/
+#pause{
+ 	width: 300px;
+    height: 160px;
+    position: absolute;
+    background-image: url(../img/pause.png);
+    background-repeat: no-repeat;
+    background-size: 166%;
+    background-position: center;
+    top: -30%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 999;
+    animation-duration:1.5s;
+    animation-fill-mode: forwards;
+    transform-origin:center;
+}
+@keyframes drop{
+ 	0%{top:-30%;transform: rotate(-20deg);}
+ 	60%{top:35%;transform: rotate(-20deg);}
+	65%{top:35%;transform: rotate(-20deg);}
+ 	85%{top:35%;transform: rotate(20deg);}
+ 	100%{top:35%;transform: rotate(0deg);}
+}
+@keyframes raise{
+ 	0%{left: 50%;top:35%;}
+ 	100%{left: 50%;top:-30%;}
+}
+#pause span{
+ 	display: inline-block;
+ 	width: 53px;
+ 	height: 53px;
+ 	border-radius: 50%;
+ 	position: absolute;
+ 	top:64px;
+}
+#pause span:nth-child(1){
+	left:53px;
+}
+#pause span:nth-child(2){
+	left:128px;
+}
+#pause span:nth-child(3){
+	left:206px;
+}
+/*pause-e*/
+#titlebar{
+	width:250px;
+ 	height: 160px;
+ 	font-family:'NeonTech';
+ 	font-size:50px;
+ 	color:pink;
+ 	text-align:center;
+ 	line-height:160px;
+ 	position:absolute;
+ 	top:220px;
+	left: 240px;
+	z-index:999;
+	transform: scale(0);
+	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+@keyframes titlebar{
+ 	0%{transform:scale(1);opacity:1;}
+ 	100%{none;transform:scale(3);opacity:0}
+}
