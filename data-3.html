@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪吃蛇1-3</title>
+	<link rel="stylesheet" href="css/data.css">
+	<script src="js/data.js"></script>
+</head>
+<body>
+	<audio autoplay="autoplay" loop="loop">
+	  <source src="music/bgm.mp3" type="audio/mpeg">
+	Your browser does not support the audio tag.
+	</audio>
+	<audio>
+	  <source src="music/dead.mp3" type="audio/mpeg">
+	Your browser does not support the audio tag.
+	</audio>
+	<audio>
+	  <source src="music/eating.mp3" type="audio/mpeg">
+	Your browser does not support the audio tag.
+	</audio>
+	<div class="panel">
+		<div id="bgm_onoff"></div>
+		<div id="start">Start</div>
+		<div class='scoreframe'>
+			<div id="score">
+			Score：
+				<form action="" method="post">
+					<input id='scoreV' type="text" readonly name='name' value='0'>
+				</form>
+			</div>
+		</div>
+		<div class="bg">
+			<div id="container"></div>
+		</div>
+		<div class="titlebar"></div>
+		<div id="tip">
+			<p class='gameover'>Game Over!</p>
+			<p id='ps'>ps:咬到自己啦！</p>
+			<input type="button" value="重新游戏" id='continue'>
+		</div>	
+		<div id="titlebar">BEGIN</div>
+		<div id="pause">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<form id="user"  action="" method="post">
+			<input id='yourname' type="text" readonly name='yourname' value='4567'>
+		</form>	
+<!-- 		<div id="log">
+			<div id="highScore">最高记录:0</div>
+			<ul id="wrap">
+			</ul>
+		</div> -->
+	</div>
+
+</body>
+</html>
